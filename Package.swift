@@ -3,6 +3,9 @@
 
 import PackageDescription
 
+let version = "1.0.0"
+let checksum = "c84103c24c4f344a109ce68d73b234776afcdc681425d217fab732c92c8cff89"
+
 let package = Package(
     name: "SwiftCLib",
     products: [
@@ -12,10 +15,6 @@ let package = Package(
             targets: ["SwiftCLib"]),
     ],
     targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages this package depends on.
-        .target(
-            name: "SwiftCLib",
-            dependencies: []),
+        .binaryTarget(name: "SwiftCLib", url: "https://github.com/Kirow/swift-binary-package/raw/\(version)/SwiftCLib.xcframework.zip", checksum: checksum)
     ]
 )
